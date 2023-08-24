@@ -1,0 +1,12 @@
+<table>
+    <thead>
+        <th>Name</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        <app-user-details 
+        *ngFor="let user of users" 
+        [detail]="user"
+        (remove)="handleRemove($event)"></app-user-details>
+    </tbody>
+</table>
