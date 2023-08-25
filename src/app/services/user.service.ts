@@ -12,6 +12,10 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
+  getUser(id: number){
+    return this.http.get<User>(`${USER_API}/1`)
+  }
+
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(USER_API);
   }

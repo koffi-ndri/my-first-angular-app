@@ -1,0 +1,22 @@
+<form #form="ngForm">
+  User Name:
+  <input type="text" [(ngModel)]="user.name" name="name">
+  <label>
+    <input type="radio" name="isActive" [value]="true" [ngModel]="user.isActive">
+  </label>
+  <label>
+    <input type="radio" name="isActive" [value]="false" #userName="ngModel" [ngModel]="user.isActive"
+      (ngModelChange)="toggleIsActive($event)">
+  </label>
+  <label>
+    User Type:
+    <select name="userType" [ngModel]="user.name">
+      <option *ngFor="let type of userType" [value]="type.key" [selected]="type.value === user.type">{{type.value}}</option>
+    </select>
+  </label>
+</form>
+<div>
+  MODEL: {{user | json}}
+  FORM: {{form.value | json}}
+  ERROR: <div *ngIf="!userName.pristine">Not pristine anymore!</div>
+</div>

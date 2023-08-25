@@ -3,12 +3,14 @@
       {
         "id": 1,
         "name": "Koffi",
-        "email": "koffi@gmail.com"
+        "email": "koffi@gmail.com",
+        "isActive": true
       },
       {
         "id": 2,
         "name": "Andrew",
-        "email": "andrew@gmail.com"
+        "email": "andrew@gmail.com",
+        "isActive": false
       },
       {
         "id": 3,
