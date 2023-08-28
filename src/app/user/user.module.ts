@@ -4,22 +4,37 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserService } from '../services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+import { UserTemplateFormComponent } from './user-template-form/user-template-form.component';
 
-
+const routes: Routes = [
+  {
+    path: "",
+    children: [
+      {path: "", component: UserListComponent},
+      {path: ':id', component: UserTemplateFormComponent}
+    ]
+  }
+]
 
 @NgModule({
   declarations: [
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserTemplateFormComponent
   ],
   imports: [
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forChild(routes)
   ],
   // always add this
   exports: [
     UserListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserTemplateFormComponent
   ],
   // for adding services
   providers: [

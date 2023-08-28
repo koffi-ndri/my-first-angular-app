@@ -1,2 +1,7 @@
 <!-- <app-user-list></app-user-list> -->
-<app-user-template-form></app-user-template-form>
+<!-- <app-user-template-form></app-user-template-form> -->
+<router-outlet></router-outlet>
+<div>
+    <a *ngFor="let item of nav" [routerLink]="item.link" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: item.exact}">{{item.name}}</a>
+</div>

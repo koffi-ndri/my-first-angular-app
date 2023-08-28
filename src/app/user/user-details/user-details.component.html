@@ -1,5 +1,6 @@
 <tr>
     <td>{{detail.name}}</td>
     <td>{{detail.email}}</td>
+    <button [routerLink]="['/user', detail.id]">Details</button>
     <button (click)="onRemove()">Remove user</button>
 </tr>
